@@ -1,8 +1,7 @@
-# Numpy
+# Numpy wrapper for Ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/numpy`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This library enables to directry call [numpy](http://pandas.pydata.org/) from Ruby language.
+This uses [pycall](https://github.com/mrkn/pycall.rb).
 
 ## Installation
 
@@ -22,7 +21,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Example usage:
+
+```ruby
+require 'numpy'
+
+x = Numpy.asarray([[1, 2, 3], [4, 5, 6]])
+puts x
+# [[1 2 3]
+#  [4 5 6]]
+
+puts x[1, 1..2]
+# [5 6]
+
+puts x.T
+# [[1 4]
+#  [2 5]
+#  [3 6]]
+
+puts x.dot x.T
+# [[14 32]
+#  [32 77]]
+
+puts x.reshape([3, 2])
+# [[1 2]
+#  [3 4]
+#  [5 6]]
+```
 
 ## Development
 
