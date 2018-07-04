@@ -25,4 +25,21 @@ RSpec.describe Numpy do
       expect(Numpy.asscalar(Numpy.asarray([true]))).to be_a(TrueClass)
     end
   end
+
+  describe '.mean' do
+    specify do
+      expect(Numpy.mean(Numpy.asarray([0.0]))).to be_a(Float)
+      expect(Numpy.mean(Numpy.asarray([0.0]))).to eq(0.0)
+    end
+
+    specify do
+      expect(Numpy.mean(Numpy.asarray([0.0]), dtype: :int32)).to be_a(Integer)
+      expect(Numpy.mean(Numpy.asarray([0.0]), dtype: :int32)).to eq(0)
+    end
+
+    specify do
+      expect(Numpy.mean(Numpy.asarray([0.0]), dtype: :complex128)).to be_a(Complex)
+      expect(Numpy.mean(Numpy.asarray([0.0]), dtype: :complex128)).to eq(0.0+0.0i)
+    end
+  end
 end

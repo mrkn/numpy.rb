@@ -35,4 +35,5 @@ module Numpy
   end
 end
 
+require 'numpy/conversion'
 require 'numpy/ndarray'
