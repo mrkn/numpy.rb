@@ -1,6 +1,15 @@
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+require "bundler/gem_helper"
 
-RSpec::Core::RakeTask.new(:spec)
+base_dir = File.join(File.dirname(__FILE__))
 
-task :default => :spec
+helper = Bundler::GemHelper.new(base_dir)
+helper.install
+
+desc "Run tests"
+task :test do
+  cd(base_dir) do
+    ruby("test/run-test.rb")
+  end
+end
+
+task default: :test
