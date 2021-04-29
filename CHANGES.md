@@ -1,3 +1,7 @@
+# 0.3.0
+
+* Add `Numpy::NDArray#to_a`
+
 # 0.2.0
 
 * Support scalar type conversion
