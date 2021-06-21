@@ -1,3 +1,7 @@
+# 0.4.0
+
+* Add `Numpy::NDArray#to_narray`
+
 # 0.3.0
 
 * Add `Numpy::NDArray#to_a`
