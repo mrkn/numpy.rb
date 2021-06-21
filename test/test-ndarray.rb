@@ -57,4 +57,45 @@ class NdarrayTest < Test::Unit::TestCase
                    })
     end
   end
+
+  sub_test_case("Numpy::NDArray#to_narray") do
+    test("for 1-D array") do
+      a = Numpy.asarray([1, 2, 3, 4, 5], dtype: Numpy.float32)
+      r = a.to_narray
+      assert_equal({
+                     class: Numo::SFloat,
+                     values: Numo::SFloat[1, 2, 3, 4, 5]
+                   },
+                   {
+                     class: r.class,
+                     values: r
+                   })
+    end
+
+    test("for 2-D array") do
+      a = Numpy.asarray([[1, 2, 3], [4, 5, 6]], dtype: Numpy.float32)
+      r = a.to_narray
+      assert_equal({
+                     class: Numo::SFloat,
+                     values: Numo::SFloat[[1, 2, 3], [4, 5, 6]]
+                   },
+                   {
+                     class: r.class,
+                     values: r
+                   })
+    end
+
+    test("for 3-D array") do
+      a = Numpy.asarray([[[1, 2], [3, 4]], [[5, 6], [7, 8]]], dtype: Numpy.float32)
+      r = a.to_narray
+      assert_equal({
+                     class: Numo::SFloat,
+                     values: Numo::SFloat[[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+                   },
+                   {
+                     class: r.class,
+                     values: r
+                   })
+    end
+  end
 end
