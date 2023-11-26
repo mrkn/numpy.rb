@@ -1,6 +1,6 @@
 # Numpy wrapper for Ruby
 
-This library enables to directry call [numpy](http://pandas.pydata.org/) from Ruby language.
+This library enables to directry call [numpy](https://numpy.org) from Ruby language.
 This uses [pycall](https://github.com/mrkn/pycall.rb).
 
 ## Installation
